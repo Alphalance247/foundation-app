@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  color: rgb(255, 38, 0);
+  background: yellow;
+  padding: 1rem 2rem;
+  anchor-name: my-anchor; /* Assigns the anchor name */
+}
+
+.anchor {
+  position: relative;
+  background-color: lightblue;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+/* Positioned element relative to the anchor */
+.positioned-element {
+  position: absolute;
+  position-anchor: my-anchor; /* Positions relative to the anchor */
+  top: 0;
+  left: 150px; /* Offset from the anchor */
+  background-color: lightgreen;
+  padding: 10px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }
