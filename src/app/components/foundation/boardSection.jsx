@@ -29,7 +29,7 @@ const trustees = [
 const TrusteesSection = () => {
   return (
     <SlideInSection>
-      <section className="bg-[#E9ECEF] py-20">
+      <section className="bg-[#E9ECEF] py-20" id="trustees">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#2A9D8F] mb-4">

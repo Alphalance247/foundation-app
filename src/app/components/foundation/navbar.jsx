@@ -3,9 +3,14 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SlideInSection from "./slideaAnimation";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   const handleScroll = (id) => {
     const section = document.querySelector(id);
@@ -15,10 +20,11 @@ const Navbar = () => {
   };
 
   const navigationLinks = [
-    { name: "Home", id: "#home" },
     { name: "About Us", id: "#about" },
     { name: "Programs", id: "#programs" },
+    { name: "Our Mission", id: "#mission" },
     { name: "Impact", id: "#impact" },
+    { name: "Media", id: "#media" },
     { name: "Board of Trustees", id: "#trustees" },
     { name: "Contact Us", id: "#contact" },
   ];
@@ -30,23 +36,16 @@ const Navbar = () => {
           {/* Logo Section */}
           <Link href={"/"}>
             <div className="flex items-center space-x-2">
-              {/* <Image
-            src="/assets/foundation/logo.png" // Replace with actual logo path
-            alt="Aisha Foundation Logo"
-            width={40}
-            height={40}
-            className="rounded-full"
-          /> */}
               <span className="text-2xl font-extrabold text-[#2A9D8F]">
                 Aisha
-                <span className="text-[#F4A261]"> Foundation</span>
+                <span className="text-[#F4A261]">Foundation</span>
               </span>
             </div>
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-8">
+          <nav className="hidden lg:block">
+            <ul className="flex space-x-8 lg:space-x-4">
               {navigationLinks.map((link, index) => (
                 <li
                   key={index}
@@ -68,30 +67,42 @@ const Navbar = () => {
           </button>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-700 focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+
+          {/* Hamburger Icon */}
+          <div className="lg:hidden">
+            <motion.div
+              onClick={toggleMenu}
+              className="cursor-pointer"
+              animate={{ rotate: menuOpen ? 45 : 0 }}
+              transition={{ duration: 0.3 }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <span
+                className={`block w-8 h-1 bg-green-800 rounded-sm mb-1 transition-all ${
+                  menuOpen && "translate-y-2"
+                }`}
+              ></span>
+              <span
+                className={`block w-8 h-1 bg-green-800 rounded-sm mb-1 transition-all ${
+                  menuOpen && "opacity-0"
+                }`}
+              ></span>
+              <span
+                className={`block w-8 h-1 bg-green-800 rounded-sm transition-all ${
+                  menuOpen && "-translate-y-2"
+                }`}
+              ></span>
+            </motion.div>
+          </div>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white shadow-lg py-4">
+          <motion.div
+            className="lg:hidden bg-white shadow-lg py-4"
+            initial={{ x: "100%" }}
+            animate={{ x: menuOpen ? "0%" : "100%" }}
+            transition={{ duration: 0.5 }}
+          >
             <ul className="space-y-4 px-6">
               {navigationLinks.map((link, index) => (
                 <li
@@ -117,7 +128,7 @@ const Navbar = () => {
                 </button>
               </li>
             </ul>
-          </div>
+          </motion.div>
         )}
       </header>
     </SlideInSection>

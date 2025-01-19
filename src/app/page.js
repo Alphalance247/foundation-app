@@ -139,126 +139,175 @@ import styles from "../../src/globals.scss";
 // import { redirect } from "next/navigation";
 // import { getSession } from "@/lib";
 // import Logout from "./logout/page";
-import { useState } from "react";
+// import { useState } from "react";
 
-export default function Messenger() {
-  // const [state, dispatch] = useReducer(messengerReducer, initialState);
-  // const message = state.messages[state.selectedId];
-  // const contact = contacts.find((c) => c.id === state.selectedId);
-  // const session = await getSession();
-  // console.log(session?.payload?.payload?.user?.email);
+// export default function Messenger() {
+//   // const [state, dispatch] = useReducer(messengerReducer, initialState);
+//   // const message = state.messages[state.selectedId];
+//   // const contact = contacts.find((c) => c.id === state.selectedId);
+//   // const session = await getSession();
+//   // console.log(session?.payload?.payload?.user?.email);
 
-  // if (!session) {
-  //   console.log("time out");
-  //   redirect("/login");
-  // }
-  const task = [
-    // {
-    //   id: 1,
-    //   content: "task 1",
-    // },
-    // {
-    //   id: 2,
-    //   content: "task 2",
-    // },
-  ];
-  let nextId = 0;
+//   // if (!session) {
+//   //   console.log("time out");
+//   //   redirect("/login");
+//   // }
+//   const task = [
+//     // {
+//     //   id: 1,
+//     //   content: "task 1",
+//     // },
+//     // {
+//     //   id: 2,
+//     //   content: "task 2",
+//     // },
+//   ];
+//   let nextId = 0;
 
-  const [addTask, setAddask] = useState(task);
-  const [add, setAdd] = useState("");
-  const [isEdit, setIsEdit] = useState(true);
-  const handleAddTask = (newTask) => {
-    setAdd("");
-    setAddask((prev) => {
-      return [...prev, { id: addTask.length + 1, content: newTask }];
-    });
-  };
+//   const [addTask, setAddask] = useState(task);
+//   const [add, setAdd] = useState("");
+//   const [isEdit, setIsEdit] = useState(true);
+//   const handleAddTask = (newTask) => {
+//     setAdd("");
+//     setAddask((prev) => {
+//       return [...prev, { id: addTask.length + 1, content: newTask }];
+//     });
+//   };
 
-  const handleDelete = (id) => {
-    setAddask(
-      addTask.filter((item) => {
-        return item?.id !== id;
-      })
-    );
-  };
+//   const handleDelete = (id) => {
+//     setAddask(
+//       addTask.filter((item) => {
+//         return item?.id !== id;
+//       })
+//     );
+//   };
 
-  const handleEdit = () => {
-    setIsEdit(false);
-  };
-  const handleSave = () => {
-    setIsEdit(true);
-  };
+//   const handleEdit = () => {
+//     setIsEdit(false);
+//   };
+//   const handleSave = () => {
+//     setIsEdit(true);
+//   };
 
+//   return (
+//     <section className=" text-center">
+//       {/* <h1>Welcome back {session?.payload?.payload?.user?.email}</h1> */}
+//       <p>This is the home page</p>
+//       {/* <Logout /> */}
+//       <br /> <br />
+//       {/* Learning useReducer hooks */}
+//       <h1 className="text-center text-3xl mb-4 text-teal-700">Use Reducer</h1>
+//       <input
+//         type="text"
+//         name="add"
+//         value={add}
+//         className="px-4 py-2 border border-yellow-500 mr-6"
+//         onChange={(e) => setAdd(e.target.value)}
+//       />
+//       <button
+//         className="px-4 py-2 text-white bg-black"
+//         onClick={() => handleAddTask(add)}
+//       >
+//         add
+//       </button>
+//       {/* Task to show */}
+//       <div>
+//         {addTask.map((el) => {
+//           return (
+//             <div key={el?.id} className="mb-6">
+//               <p className="">{el.content}</p>
+
+//               <div>
+//                 <button
+//                   onClick={() => handleDelete(el?.id)}
+//                   className="px-2 py-1 text-white bg-black mr-6"
+//                 >
+//                   delete
+//                 </button>
+//                 {isEdit ? (
+//                   <button
+//                     onClick={() => handleEdit(el?.id)}
+//                     className="px-2 py-1 text-white bg-black"
+//                   >
+//                     edit
+//                   </button>
+//                 ) : (
+//                   <>
+//                     <input
+//                       type="text"
+//                       name="add"
+//                       value={add}
+//                       className="px-4 py-2 border border-yellow-500 mr-6"
+//                       onChange={(e) => setAdd(e.target.value)}
+//                     />
+//                     <button
+//                       onClick={() => handleSave(el?.id)}
+//                       className="px-2 py-1 text-white bg-black"
+//                     >
+//                       save
+//                     </button>
+//                   </>
+//                 )}
+//               </div>
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </section>
+//   );
+// }
+
+// // const contacts = [
+// //   { id: 0, name: "Taylor", email: "taylor@mail.com" },
+// //   { id: 1, name: "Alice", email: "alice@mail.com" },
+// //   { id: 2, name: "Bob", email: "bob@mail.com" },
+// // ];
+
+import React from "react";
+// import HeroSection from "../components/foundation/hero";
+import HeroSection from "./components/foundation/hero";
+import AboutSection from "./components/foundation/about";
+import Programs from "./components/foundation/programs";
+import ImpactSection from "./components/foundation/impact";
+import TrusteesSection from "./components/foundation/boardSection";
+import Navbar from "./components/foundation/navbar";
+import VisionMissionValues from "./components/foundation/mission";
+import MediaSection from "./components/foundation/media";
+import DonationSection from "./components/foundation/donation";
+import ContactSection from "./components/foundation/contact";
+import Footer from "./components/foundation/footer";
+import Head from "next/head";
+
+const FoundationPage = () => {
   return (
-    <section className=" text-center">
-      {/* <h1>Welcome back {session?.payload?.payload?.user?.email}</h1> */}
-      <p>This is the home page</p>
-      {/* <Logout /> */}
-      <br /> <br />
-      {/* Learning useReducer hooks */}
-      <h1 className="text-center text-3xl mb-4 text-teal-700">Use Reducer</h1>
-      <input
-        type="text"
-        name="add"
-        value={add}
-        className="px-4 py-2 border border-yellow-500 mr-6"
-        onChange={(e) => setAdd(e.target.value)}
-      />
-      <button
-        className="px-4 py-2 text-white bg-black"
-        onClick={() => handleAddTask(add)}
-      >
-        add
-      </button>
-      {/* Task to show */}
+    <>
+      <Head>
+        <title>Home | Aisha Foundation</title>
+        <meta
+          name="description"
+          content="Aisha Foundation is dedicated to empowering youth through skills training in baking and tie-dye, promoting personal hygiene with menstrual pad distribution, and supporting communities with food palliatives and service initiatives in Kano State. Join us in uplifting lives and fostering hope."
+        />
+        <meta
+          name="keywords"
+          content="Aisha Foundation, youth empowerment, baking skills training, tie-dye skills training, menstrual hygiene awareness, community support initiatives, food palliatives distribution, NGO in Kano State, nonprofit organization, empowering young girls and boys, hygiene education, community service in Nigeria"
+        />
+        <meta name="author" content="Aisha Foundation" />
+      </Head>
       <div>
-        {addTask.map((el) => {
-          return (
-            <div key={el?.id} className="mb-6">
-              <p className="">{el.content}</p>
-
-              <div>
-                <button
-                  onClick={() => handleDelete(el?.id)}
-                  className="px-2 py-1 text-white bg-black mr-6"
-                >
-                  delete
-                </button>
-                {isEdit ? (
-                  <button
-                    onClick={() => handleEdit(el?.id)}
-                    className="px-2 py-1 text-white bg-black"
-                  >
-                    edit
-                  </button>
-                ) : (
-                  <>
-                    <input
-                      type="text"
-                      name="add"
-                      value={add}
-                      className="px-4 py-2 border border-yellow-500 mr-6"
-                      onChange={(e) => setAdd(e.target.value)}
-                    />
-                    <button
-                      onClick={() => handleSave(el?.id)}
-                      className="px-2 py-1 text-white bg-black"
-                    >
-                      save
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
-          );
-        })}
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <VisionMissionValues />
+        <Programs />
+        <ImpactSection />
+        <TrusteesSection />
+        <MediaSection />
+        <DonationSection />
+        <ContactSection />
+        <Footer />
       </div>
-    </section>
+    </>
   );
-}
+};
 
-// const contacts = [
-//   { id: 0, name: "Taylor", email: "taylor@mail.com" },
-//   { id: 1, name: "Alice", email: "alice@mail.com" },
-//   { id: 2, name: "Bob", email: "bob@mail.com" },
-// ];
+export default FoundationPage;

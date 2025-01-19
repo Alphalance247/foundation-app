@@ -56,9 +56,9 @@ const ProgramsSection = () => {
   return (
     <SlideInSection>
       <section id="programs" className="bg-[#F4F1E1]">
-        <div className=" py-16 px-6 max-w-[1350px] mx-auto">
-          <div className="text-center mb-[5rem] w-[70%] mx-auto">
-            <h2 className="text-5xl font-extrabold text-[#2A9D8F] mb-4">
+        <div className="py-10 sm:py-16 px-6 max-w-[1350px] mx-auto">
+          <div className="w-[100%] text-center mb-[5rem] sm:w-[70%] mx-auto">
+            <h2 className="text-3xl mb-8 sm:text-5xl font-extrabold text-[#2A9D8F] sm:mb-6">
               Our Programs & Initiatives
             </h2>
             <p className="text-lg text-gray-600">

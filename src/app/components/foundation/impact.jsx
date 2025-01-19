@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import SlideInSection from "./slideaAnimation";
+import { motion } from "framer-motion";
 
 const impactStats = [
   {
@@ -28,10 +29,22 @@ const impactStats = [
     description: "Food palliatives delivered to orphanages and IDPs.",
   },
   {
-    title: "Community Projects",
-    value: 50,
-    icon: <FaBuilding className="text-4xl text-orange-500" />,
-    description: "Cleaning, renovations, and sustainable initiatives.",
+    title: "Youth Empowered",
+    value: 1200,
+    icon: <FaUserGraduate className="text-4xl text-orange-500" />,
+    description: "Trained in baking, tie-dye, and practical skills.",
+  },
+  {
+    title: "Health Kits Distributed",
+    value: 3000,
+    icon: <FaHandsHelping className="text-4xl text-orange-500" />,
+    description: "Menstrual hygiene kits provided to young girls.",
+  },
+  {
+    title: "Meals Served",
+    value: 15000,
+    icon: <FaUtensils className="text-4xl text-orange-500" />,
+    description: "Food palliatives delivered to orphanages and IDPs.",
   },
 ];
 
@@ -58,31 +71,78 @@ const ImpactSection = () => {
 
   return (
     <SlideInSection>
-      <section className="bg-[#2A9D8F]  text-white py-20 ">
+      <section className="py-10 bg-[#2A9D8F]  text-white sm:py-20 " id="impact">
         <div className="max-w-[1350px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Our Impact</h2>
-            <p className="text-lg sm:text-xl max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4">Our Impact</h2>
+            <p className="text-base sm:text-xl max-w-2xl mx-auto">
               Together, we`ve made a difference by empowering communities and
               uplifting lives. Here’s what we’ve achieved so far.
             </p>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-            {impactStats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white text-black rounded-lg shadow-lg p-6 hover:scale-105 transition-transform"
-              >
-                <div className="flex justify-center items-center mb-4">
-                  {stat.icon}
-                </div>
-                <h3 className="text-3xl font-bold mb-2">{counts[index]}</h3>
-                <p className="text-lg font-semibold">{stat.title}</p>
-                <p className="text-sm text-gray-600">{stat.description}</p>
-              </div>
-            ))}
+          <div className="overflow-hidden relative mb-16">
+            <motion.div
+              className="flex space-x-8"
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{
+                duration: 15, // Time for a full loop
+                repeat: Infinity, // Loop forever
+                ease: "linear", // Smooth animation
+              }}
+              style={{ display: "flex" }}
+            >
+              {impactStats.concat(impactStats).map(
+                (
+                  card,
+                  index // Duplicate cards for seamless looping
+                ) => (
+                  <div
+                    key={index}
+                    className="min-w-[300px] bg-white text-black text-center rounded-lg shadow-md p-6"
+                  >
+                    <div className="flex justify-center items-center mb-4">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2">{card?.value}</h3>
+                    <p className="text-lg font-semibold">{card.title}</p>
+                    <p className="text-gray-600 text-sm">{card.description}</p>
+                  </div>
+                )
+              )}
+            </motion.div>
+          </div>
+
+          <div className="overflow-hidden relative">
+            <motion.div
+              className="flex space-x-8"
+              animate={{ x: ["-100%", "0%"] }}
+              transition={{
+                duration: 15, // Time for a full loop
+                repeat: Infinity, // Loop forever
+                ease: "linear", // Smooth animation
+              }}
+              style={{ display: "flex" }}
+            >
+              {impactStats.concat(impactStats).map(
+                (
+                  card,
+                  index // Duplicate cards for seamless looping
+                ) => (
+                  <div
+                    key={index}
+                    className="min-w-[300px] bg-white text-black text-center rounded-lg shadow-md p-6"
+                  >
+                    <div className="flex justify-center items-center mb-4">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2">{card?.value}</h3>
+                    <p className="text-lg font-semibold">{card.title}</p>
+                    <p className="text-gray-600 text-sm">{card.description}</p>
+                  </div>
+                )
+              )}
+            </motion.div>
           </div>
 
           {/* Call to Action */}
