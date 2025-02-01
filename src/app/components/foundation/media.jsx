@@ -20,14 +20,54 @@ const MediaSection = () => {
       src: "/assets/foundation/dye.jpg",
       caption: "Community Service",
     },
-    {
-      id: 3,
-      src: "/assets/foundation/educate.jpg",
-      caption: "Skills Training",
-    },
+    // {
+    //   id: 3,
+    //   src: "/assets/foundation/educate.jpg",
+    //   caption: "Skills Training",
+    // },
     {
       id: 4,
       src: "/assets/foundation/menstrual.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 5,
+      src: "/assets/foundation/1.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 6,
+      src: "/assets/foundation/2.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 7,
+      src: "/assets/foundation/3.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 8,
+      src: "/assets/foundation/4.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 9,
+      src: "/assets/foundation/5.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 10,
+      src: "/assets/foundation/6.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 11,
+      src: "/assets/foundation/7.jpg",
+      caption: "Food Distribution",
+    },
+    {
+      id: 12,
+      src: "/assets/foundation/8.jpg",
       caption: "Food Distribution",
     },
   ];
@@ -35,12 +75,32 @@ const MediaSection = () => {
   const videos = [
     {
       id: 1,
-      src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      src: "/assets/video/video3.mp4",
       title: "Foundation Overview",
     },
     {
       id: 2,
-      src: "https://www.youtube.com/embed/3GwjfUFyY6M",
+      src: "/assets/video/video2.mp4",
+      title: "Success Stories",
+    },
+    {
+      id: 3,
+      src: "/assets/video/video4.mp4",
+      title: "Success Stories",
+    },
+    {
+      id: 4,
+      src: "/assets/video/video5.mp4",
+      title: "Success Stories",
+    },
+    {
+      id: 5,
+      src: "/assets/video/video6.mp4",
+      title: "Success Stories",
+    },
+    {
+      id: 6,
+      src: "/assets/video/video7.mp4",
       title: "Success Stories",
     },
   ];
@@ -95,19 +155,19 @@ const MediaSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               {photos.map((photo, index) => (
                 <div
                   key={index}
-                  className="overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  className="overflow-hidden rounded-lg  hover:scale-105 transition-transform duration-300"
                 >
                   <Image
                     src={photo.src}
                     alt={`Gallery Image ${index + 1}`}
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full"
+                    width={250}
+                    height={150}
+                    className=" w-full h-fit"
                   />
                 </div>
               ))}
@@ -128,15 +188,10 @@ const MediaSection = () => {
                   key={index}
                   className="relative overflow-hidden rounded-lg shadow-lg"
                 >
-                  <iframe
-                    width="100%"
-                    height="250"
-                    src={video.src}
-                    title={video.title}
-                    // frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <video width="100%" controls className="h-[300px]">
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               ))}
             </motion.div>

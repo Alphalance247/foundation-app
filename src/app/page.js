@@ -277,6 +277,7 @@ import DonationSection from "./components/foundation/donation";
 import ContactSection from "./components/foundation/contact";
 import Footer from "./components/foundation/footer";
 import Head from "next/head";
+import NextPlansSection from "./components/foundation/NextPlans";
 
 const FoundationPage = () => {
   return (
@@ -299,6 +300,7 @@ const FoundationPage = () => {
         <AboutSection />
         <VisionMissionValues />
         <Programs />
+        <NextPlansSection />
         <ImpactSection />
         <TrusteesSection />
         <MediaSection />

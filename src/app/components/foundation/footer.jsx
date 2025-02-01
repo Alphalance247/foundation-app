@@ -54,25 +54,39 @@ const Footer = () => {
           <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
           <p>123 Foundation Lane</p>
           <p>Kano State, Nigeria</p>
-          <p>Phone: +234 800 123 4567</p>
-          <p>Email: info@aishafoundation.org</p>
+          <a href="tel:+2349077774410">
+            <p>Phone: +234 9077774410 </p>
+          </a>
+
+          <a href="mailto:aishaabdulraheem66@gmail.com">
+            <p>Email: aishaabdulraheem66@gmail.com</p>
+          </a>
         </div>
 
         {/* Social Media */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-green-300">
+            <a
+              href="https://www.facebook.com/dahmeey.abdulraheem/"
+              className="hover:text-green-300"
+            >
               <FaFacebookF size={20} />
             </a>
-            <a href="#" className="hover:text-green-300">
-              <FaTwitter size={20} />
+            <a
+              href="https://www.linkedin.com/in/aisha-abdulraheem-065b482a8/"
+              className="hover:text-green-300"
+            >
+              <FaLinkedinIn size={20} />
             </a>
-            <a href="#" className="hover:text-green-300">
+            <a
+              href="https://www.instagram.com/aisha_women_rise_foundation?igsh=MXA2ZjJsa2t6NW13eQ=="
+              className="hover:text-green-300"
+            >
               <FaInstagram size={20} />
             </a>
             <a href="#" className="hover:text-green-300">
-              <FaLinkedinIn size={20} />
+              <FaTwitter size={20} />
             </a>
           </div>
         </div>
