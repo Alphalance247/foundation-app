@@ -300,8 +300,8 @@ const FoundationPage = () => {
         <AboutSection />
         <VisionMissionValues />
         <Programs />
-        <NextPlansSection />
         <ImpactSection />
+        <NextPlansSection />
         <TrusteesSection />
         <MediaSection />
         <DonationSection />
