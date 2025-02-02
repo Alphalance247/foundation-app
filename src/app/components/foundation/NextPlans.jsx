@@ -91,7 +91,7 @@ const nextPlans = [
 
 const NextPlansSection = () => {
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className="bg-gray-50 py-16 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -103,8 +103,8 @@ const NextPlansSection = () => {
             and drive positive change.
           </p>
         </div>
-        {/* Timeline Container */}
-        <div className="relative">
+        {/* Timeline Container with overflow-hidden to clip any extended elements */}
+        <div className="relative overflow-hidden">
           {/* Central Vertical Line */}
           <div className="absolute left-1/2 top-0 h-full border-l-4 border-orange-500 transform -translate-x-1/2"></div>
           {/* Timeline Items */}
@@ -128,12 +128,18 @@ const NextPlansSection = () => {
                     </h3>
                     <p className="text-gray-600">{plan.description}</p>
                   </div>
-                  {/* Timeline Dot */}
-                  <div
-                    className={`absolute top-4 w-8 h-8 rounded-full bg-orange-500 border-4 border-white z-20 ${
-                      isEven ? "right-[-1.75rem]" : "left-[-1.75rem]"
-                    }`}
-                  ></div>
+                  {/* Timeline Dot: Centered on mobile; offset for md and up */}
+                  {/* <div
+                    className={`
+                      absolute top-4 w-8 h-8 rounded-full bg-orange-500 border-4 border-white z-20
+                      left-1/2 transform -translate-x-1/2
+                      md:${
+                        isEven
+                          ? "right-[-1.75rem] md:left-auto"
+                          : "left-[-1.75rem] md:right-auto"
+                      }
+                    `}
+                  ></div> */}
                 </motion.div>
               );
             })}
