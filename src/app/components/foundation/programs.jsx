@@ -62,9 +62,9 @@ const ProgramsSection = () => {
               Our Programs & Initiatives
             </h2>
             <p className="text-lg text-gray-600">
-              Aisha Foundation is dedicated to empowering the youth, promoting
-              health, and improving community well-being through various
-              programs.
+              Aisha Women’s Rise Foundation is dedicated to empowering the
+              youth, promoting health, and improving community well-being
+              through various programs.
             </p>
           </div>
 

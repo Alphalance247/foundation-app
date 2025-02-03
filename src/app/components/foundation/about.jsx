@@ -16,10 +16,10 @@ const AboutSection = () => {
                   of Our Communities
                 </h2>
                 <p className="text-base sm:text-xl text-gray-800 leading-relaxed mb-6 max-w-lg lg:mx-0">
-                  Aisha Foundation is committed to equipping youth with
-                  life-changing skills such as baking and tie-dye, while also
-                  promoting personal hygiene and health. We work tirelessly to
-                  bring better living conditions to marginalized communities,
+                  Aisha Women’s Rise Foundation is committed to equipping youth
+                  with life-changing skills such as baking and tie-dye, while
+                  also promoting personal hygiene and health. We work tirelessly
+                  to bring better living conditions to marginalized communities,
                   providing menstrual health support and food aid.
                 </p>
                 <div className="flex justify-center items-start lg:justify-start">

@@ -283,7 +283,7 @@ const FoundationPage = () => {
   return (
     <>
       <Head>
-        <title>Home | Aisha Foundation</title>
+        <title>Home | Aisha Women’s Rise Foundation</title>
         <meta
           name="description"
           content="Aisha Foundation is dedicated to empowering youth through skills training in baking and tie-dye, promoting personal hygiene with menstrual pad distribution, and supporting communities with food palliatives and service initiatives in Kano State. Join us in uplifting lives and fostering hope."

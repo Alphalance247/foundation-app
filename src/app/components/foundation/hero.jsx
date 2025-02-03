@@ -16,8 +16,8 @@ const HeroSection = () => {
           <span className="text-orange-500">Transforming</span> Futures
         </h1>
         <p className=" text-base mt-0 md:text-2xl sm:mt-6">
-          Aisha Foundation – Enabling young people with skills, promoting
-          health, and uplifting communities.
+          Aisha Women’s Rise Foundation – Enabling young people with skills,
+          promoting health, and uplifting communities.
         </p>
         {/* Buttons */}
         <div className="mt-6 flex space-x-8 sm:mt-12">

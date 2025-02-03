@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Aisha Foundation",
+  title: "Aisha Women’s Rise Foundation",
   description:
     "Aisha Foundation is dedicated to empowering youth through skills training in baking and tie-dye, promoting personal hygiene with menstrual pad distribution, and supporting communities with food palliatives and service initiatives in Kano State. Join us in uplifting lives and fostering hope.",
 };

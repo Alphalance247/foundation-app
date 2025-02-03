@@ -120,7 +120,7 @@ const ContactSection = () => {
                     Visit Us
                   </h4>
                   <p className="text-gray-600">
-                    123 Foundation Lane, Kano, Nigeria
+                    Hotoro, Opposite Naisa Store, Kano State
                   </p>
                 </div>
               </div>

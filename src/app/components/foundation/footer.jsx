@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
-          <p>123 Foundation Lane</p>
+          <p>Hotoro, Opposite Naisa Store,</p>
           <p>Kano State, Nigeria</p>
           <a href="tel:+2349077774410">
             <p>Phone: +234 9077774410 </p>

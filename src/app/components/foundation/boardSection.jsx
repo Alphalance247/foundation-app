@@ -4,23 +4,23 @@ import SlideInSection from "./slideaAnimation";
 
 const trustees = [
   {
-    name: "Aisha Bamidele",
-    role: "Founder & Chairperson",
+    name: "Aisha Damilola Bamidele",
+    role: "Founder",
     image: "/assets/foundation/1a.jpg", // Replace with actual image URLs
     bio: "A passionate advocate for youth empowerment and community development.",
     linkedin: "https://linkedin.com/in/aishabamidele",
   },
   {
-    name: "John Doe",
-    role: "Secretary",
-    image: "/assets/foundation/1c.webp",
+    name: "Sijuade Abdulraheem",
+    role: "Spokesperson",
+    image: "/assets/foundation/1b.jpg",
     bio: "An experienced professional in non-profit governance.",
     linkedin: "https://linkedin.com/in/johndoe",
   },
   {
-    name: "Jane Smith",
-    role: "Treasurer",
-    image: "/assets/foundation/1d.jpg",
+    name: "Mariam Abdulraheem ",
+    role: "Secretary",
+    image: "/assets/foundation/1c.jpg",
     bio: "Expert in financial management and strategic planning.",
     linkedin: "https://linkedin.com/in/janesmith",
   },
@@ -52,6 +52,7 @@ const TrusteesSection = () => {
                     alt={trustee.name}
                     layout="fill"
                     objectFit="cover"
+                    style={{ objectPosition: "50% 30%" }}
                     className="hover:opacity-90"
                   />
                 </div>
@@ -63,16 +64,6 @@ const TrusteesSection = () => {
                     {trustee.role}
                   </p>
                   <p className="text-gray-700 text-sm mb-4">{trustee.bio}</p>
-                  {trustee.linkedin && (
-                    <a
-                      href={trustee.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#2A9D8F] text-lg hover:text-[#F4A261] transition-colors"
-                    >
-                      <FaLinkedin />
-                    </a>
-                  )}
                 </div>
               </div>
             ))}
