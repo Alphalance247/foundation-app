@@ -26,7 +26,7 @@ const trustees = [
   },
   {
     name: "Michael Bamidele",
-    role: "PRO(public relations officer)",
+    role: "PRO (public relations officer)",
     image: "/assets/foundation/1e.jpg",
     bio: "Dedicated to communicating the foundation's mission and fostering positive relationships within the community.",
     linkedin: "https://linkedin.com/in/janesmith",
