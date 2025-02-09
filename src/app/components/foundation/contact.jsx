@@ -105,10 +105,10 @@ const ContactSection = () => {
                     Email Us
                   </h4>
                   <a
-                    href="mailto:aishaabdulraheem66@gmail.com"
+                    href="mailto:aishawomensrisefoundation@gmail.com"
                     className="underline underline-offset-2"
                   >
-                    <p>aishaabdulraheem66@gmail.com</p>
+                    <p>aishawomensrisefoundation@gmail.com</p>
                   </a>
                 </div>
               </div>

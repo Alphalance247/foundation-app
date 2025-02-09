@@ -18,10 +18,17 @@ const trustees = [
     linkedin: "https://linkedin.com/in/johndoe",
   },
   {
-    name: "Mariam Abdulraheem ",
+    name: "Mariam Abdulraheem",
     role: "Secretary",
     image: "/assets/foundation/1c.jpg",
     bio: "Expert in financial management and strategic planning.",
+    linkedin: "https://linkedin.com/in/janesmith",
+  },
+  {
+    name: "Michael Bamidele",
+    role: "PRO(public relations officer)",
+    image: "/assets/foundation/1d.jpg",
+    bio: "Dedicated to communicating the foundation's mission and fostering positive relationships within the community.",
     linkedin: "https://linkedin.com/in/janesmith",
   },
 ];
@@ -44,7 +51,9 @@ const TrusteesSection = () => {
             {trustees.map((trustee, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform"
+                className={`bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform ${
+                  index === 3 ? "lg:col-start-2" : ""
+                }`}
               >
                 <div className="relative h-60 w-full">
                   <Image
