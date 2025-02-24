@@ -156,7 +156,7 @@ const DonationSection = () => {
                   Account Name
                 </p>
                 <p className="text-xl font-semibold text-gray-800">
-                  Aisha Damilola abdulraheem
+                  Aisha Women’s Rise Foundation
                 </p>
               </div>
               <div>
@@ -164,7 +164,7 @@ const DonationSection = () => {
                   Account Number
                 </p>
                 <p className="text-xl font-semibold text-gray-800">
-                  0012187533
+                  0019751056
                 </p>
               </div>
               <div>
