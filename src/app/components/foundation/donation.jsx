@@ -110,7 +110,10 @@ import { FaUniversity } from "react-icons/fa";
 
 const DonationSection = () => {
   return (
-    <section className="bg-gradient-to-br from-gray-100 to-white py-20 px-4">
+    <section
+      className="bg-gradient-to-br from-gray-100 to-white py-20 px-4"
+      id="donate"
+    >
       <div className="w-full md:max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
